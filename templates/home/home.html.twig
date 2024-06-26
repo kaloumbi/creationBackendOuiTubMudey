@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %} 
+{% block home %}
+<div class="categories-slider">
+    {%for category in categories %}
+        <a href="/article/by/category/{{category.slug}}">
+            <div class="slide" style="background-image: url('{{category.imageUrl}}');">
+                <h2>
+                    {{ category.name}} ({{ category.articles | length}} articles publiés)
+                </h2>
+            </div>
+        </a>
+    {%endfor%}
+
+</div>
+{% endblock %}
